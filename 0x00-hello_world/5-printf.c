@@ -1,4 +1,4 @@
-/** 
+/**
  *main - program startup
  (*
  *Description: prints the exact phrase followed by a new line)?
@@ -9,5 +9,5 @@
 int main(void)
 {
 	  printf("\"Programming is like building a multilingual puzzle");
-	     return (0);
+	  return (0);
 }
