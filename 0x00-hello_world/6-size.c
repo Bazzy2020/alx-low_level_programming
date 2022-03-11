@@ -1,4 +1,4 @@
-/** 
+/**
  *main - program startup
  (*
  *Description: prints the size of various types)?
