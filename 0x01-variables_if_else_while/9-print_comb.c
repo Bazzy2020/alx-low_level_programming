@@ -1,11 +1,11 @@
 #include <stdio.h>
 /**
  *main - main block
- *Description: Print all possible combinations to single-digit numbers.
+ *Description: Print all possible combinationsfor single-digitnumbers.
  *Numbers must be separated by commas and a space.
  *You can only use `putchar` to print to console
  *You can only use `putchar` up to four times.
- *You are not allowed to use any variavle of type 'char'.
+ *You are not allowed to use any variable of type 'char'.
  *Return: 0
  */
 
@@ -15,7 +15,7 @@ int main(void)
 
 	while (i < 0)
 	{
-		putchar(i + '0');
+		putchar(i +'0');
 		if (i < 9)
 		{
 			putchar(44);
