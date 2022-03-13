@@ -25,8 +25,8 @@ int main(void)
 
 		if (k < j)
 		{
-			putchar(k + '0');
-			putchar(j + '0');
+			putchar(k);
+			putchar(j);
 
 			if (i < 89)
 			{
