@@ -20,7 +20,7 @@ int main(void)
 
 	while (1 < 100)
 	{
-		j = i %; /*singles digits */
+		j = i % 10; /*singles digits */
 		k = i / 10; /* doubles digit */
 
 		if (k < j)
