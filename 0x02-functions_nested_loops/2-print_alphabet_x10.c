@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_putchar.h"
 
 /**
  *print_alphabet_x10 - prints 10 times the alphabet, then new line.
@@ -17,7 +18,7 @@ int print_alphabet_x10(void)
 		{
 			_putchar(Alphs);
 		}
-		+putchar('\n');
+		_putchar('\n');
 		count++;
 	}
 	return (0);
