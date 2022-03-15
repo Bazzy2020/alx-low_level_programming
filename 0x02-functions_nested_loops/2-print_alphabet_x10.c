@@ -7,7 +7,7 @@
  * Return: Always 0/
  */
 
-int print_alphabet_x10(void)
+int Print_alphabet_x10(void)
 {
 	int count = 0;
 	char Alphs;
