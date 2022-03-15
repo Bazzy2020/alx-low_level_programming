@@ -9,10 +9,10 @@ int print_alphabet(void)
 {
 	char Alphas;
 
-	for (Alphs = 'a'; Alphas <= 'z'; Alphas++)
+	for (Alphas = 'a'; Alphas <= 'z'; Alphas++)
 	{
-		_putchar(Alphas);
+		putchar(Alphas);
 	}
-	_putchar('\n');
+	putchar('\n');
 	return (0);
 }
