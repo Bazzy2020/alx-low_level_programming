@@ -1,7 +1,7 @@
-#include "print_alphabet.h"
+#include "main.h"
 
 /**
- * main - prints alphabets, then new line
+ * print_alphabet - prints alphabets, then new line
  * Description: uses for function
  */
 
