@@ -10,6 +10,7 @@ int main()
 {
 char Alphas;
 void _putchar(int);
+int print_alphabet(int);
 
 for (Alphas = 'a'; Alphas <= 'z'; Alphas++)
 {
