@@ -4,7 +4,7 @@
  *print_alphabet - prints alphabet -- lower case.
  *Return: Always 0.
  */
-int Print_alphabet(void);
+int Print_alphabet(int);
 
 int Print_alphabet(void)
 {
