@@ -1,4 +1,17 @@
 #include <stdio.h>
+/**
+ * main - main print a[2] = 98
+ *You are not allowed to use the variable a in your new line of code
+ *You are not allowed to modify the variable p
+ *You can only write one statement
+ *You are not allowed to use ,
+ *You are not allowed to code anything else than the expected line
+ *Your code should be written at line 19, before the ;
+ *Do not remove anything from the initial code (not even the comments)
+ *and don’t change anything but the line of code added
+ *You are allowed to use the standard library
+ * Return: Always 0.
+ */
 
 int main(void)
 {
