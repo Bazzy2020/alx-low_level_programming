@@ -27,11 +27,11 @@ int wildcmp(char *s1, char *s2)
 
 int checkLast(char *s, int i)
 {
-	if (s[i] == '*')
-		return (checkLast(s, i + 1));
-	else if (s[i] == '\0')
-	return (1);
-	return (0);
+if (s[i] == '*')
+return (checkLast(s, i + 1));
+else if (s[i] == '\0')
+return (1);
+return (0);
 }
 
 /**
@@ -69,5 +69,5 @@ int checker(char *s1, char *s2, int a, int b, int wildUsed)
 	}
 	if (s2[b] != '\0')
 		return (checkLast(s2, b));
-		return (1);
+	return (1);
 }
