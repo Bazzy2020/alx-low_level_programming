@@ -1,21 +1,22 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
- *dlistint_len - find number of nodes of doubly linked list
- *@h: linked list
- *Return: number of nodes
+ *dlistint_len - returns number of elements in a diubly linked list.
+ *@h: pointer to list.
+ *Return: number of elements in the list.
  */
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t nbr_nodes = 0;
-	const dlistint_t *current = h;
+	const dlistint_t *temp;
+	size_t count;
 
-	while (current != NULL)
+	temp = h;
+	count = 0;
+	while (temp != NULL)
 	{
-		current = current->next;
-		nbr_nodes++;
+		temp = temp->next;
+		count++;
 	}
-	return (nbr_nodes);
+	return (count);
 }
