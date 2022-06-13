@@ -1,115 +1,61 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- *delete_dnodeint_at_index - ...
- *@head: ...
- *@index: ..
- *Return: ..
+ *dlistint_len - returns number of elements in doubly linked list.
+ *@h: ponter to head node of list.
+ *Return: number of elements in list.
  */
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
-{
-	dlistint_t *current = NULL, *temp = NULL;
-	unsigned int length = 0;
-
-	if (head && *head)
-	{
-		length = dlistint_len(*head);
-		if (index > length)
-			return (-1);
-
-		if (index == 0)
-			return (delete_irst_dnode(head));
-
-		current = get_dnodeint_at_index(*head, index);
-		if (current)
-		{
-			temp = current;
-			if (length - 1 == index)
-				current->prev->next = current->next;
-			else
-			{
-				current->prev->next = current->next;
-				current->next->prev = current->prev;
-			}
-			free(temp);
-			return (1);
-		}
-	}
-	return (-1);
-}
-/**
- *delete_frist_dnode - Remove the first node of a doubly linked list
- *@head: The head of the doubly linked list
- *Return: 1 if is deleted
- */
-
-int delete_first _dnode(dlistint_t **head)
-{
-	dlistint_t 8current = *head, *temp = NULL;
-
-	temp = current;
-	if (current->next)
-	{
-		current = current->next;
-		current->prev = temp->prev;
-		*head = current;
-	}
-	else
-	{
-		*head = NULL;
-	}
-	free(temp);
-	return (1);
-}
-/**
- *get_dnodeint_at_index - Gets a node froma doubly linked list
- *@head: The head of the doubly linked list
- *@index: The index to find in the doubly linked list
- *Return: The specific node of the doubly linked list
- */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
-{
-	dlistint_t *current = head;
-	unsigned int iter_times = o;
-
-	if (head)
-	{
-		while (current != NULL)
-		{
-			if (iter_times == index)
-				return (current);
-
-			current = current->next;
-			++iter_times;
-		}
-	}
-	return (NULL);
-}
-
-/**
- *dlistint_len - Counts the number of elements in a doubly linked list
- *@h: The dobule linked list to count
- *Return: Number of elements in the doubly linked list
- */
 size_t dlistint_len(const dlistint_t *h)
 {
-	int length = 0;
+	/* i is counter var */
+	size_t i = 0;
 
 	while (h != NULL)
 	{
-		++length;
+		i++;
 		h = h->next;
 	}
-	return (length)
+	return (i);
 }
 
+/**
+ *delete_nodeint_at_index - deletes node of a doubly linked list
+ *at a specified index.
+ *@head: pointer to head of d-list.
+ *@index: position of node to * 0 ;-)
+ *Return: 1 on success, -1 on failure.
+ */
 
+int delete_nodeint_at_index(dlistint_t **head, unsigned int index)
+{
+	unsigned int idx = 0;
+	dlistint_t *temp;
 
-
-
-
-
-
+	temp = *head;
+	if (*head == NULL || index > dlistint_len(temp))
+		return (-1);
+	if (index == 0 && temp->next)
+	{
+		temp->next->prev = NULL;
+		*head = temp->next;
+		free(temp);
+		return (1);
+	}
+	else if (index == 0 && temp)
+	{
+		free(temp);
+		*head = NULL;
+		return (1);
+	}
+	while (idx < index)
+	{
+		temp = temp->next;
+		idx++;
+	}
+	temp->prev->next = temp->next;
+	if (temp->next)
+		temp->next->prev = temp->prev;
+	free(temp);
+	return (1);
+}
