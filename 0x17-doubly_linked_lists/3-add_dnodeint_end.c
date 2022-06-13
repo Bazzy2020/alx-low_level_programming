@@ -1,38 +1,37 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- *add_dnodeint_end - Adds a new node at the end
- *of a doubly linked list
- *@head: The head of the doubly linked list
- *@n: The number to place in the new node
- *Return: The new head of the doubly linked list
+ *add_dnodeint_end - adds new node at end of doubly linked list.
+ *@head: double pointer to list.
+ *@n: New node.
+ *Return: address to new element or NULL.
  */
 
-dlistint_t *add_dnodeint_end(dlistint_t *head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *current = NULL, *new_node = NULL;
+	dlistint_t *new_Node;
+	dlistint_t *temp;
 
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
+	new_Node = (dlistint_t *)malloc(sizeof(dlistint_t));
+	if (new_Node == NULL)
 		return (NULL);
 
-	new_node->n = n;
-	if (*head)
+	new_Node->n = n;
+	new_Node->next = NULL;
+	temp = *head;
+	if (temp == NULL)
 	{
-		current = *head;
-		while (current->next != NULL)
-			current = current->next;
-
-		new_node->next = NULL;
-		new_node->prev = current;
-		current->next = new_node;
-		return (new_node);
+		new_Node->prev = NULL;
+		*head = new_Node;
+		return (new_Node);
+	}
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
 	}
 
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
-	return (*head);
-}
+	temp->next = new_Node;
+	new_Node->prev = temp;
 
+	return (new_Node);
+}
